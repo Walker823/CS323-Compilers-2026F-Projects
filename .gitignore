@@ -2,3 +2,4 @@ src/main/java/generated/
 bin/
 target/
 *.class
+.vscode/
