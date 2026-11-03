@@ -1,0 +1,5 @@
+(program (globalDef (functionDef (type int) main ( ) (block { (statement (localVarDef (variableDecl (type int) a) = (expression 1) ;)) (statement (ifStatement if ( (expression (expression a) < (expression 2)) ) (block { (statement (localVarDef (variableDecl (type int) b) = (expression 2) ;)) }) else (block { (statement (localVarDef (variableDecl (type int) c) = (expression 3) ;)) }))) (statement (whileStatement while ( (expression a) ) (block { (statement (block { (statement (localVarDef (variableDecl (type int) d) = (expression 4) ;)) })) (statement (expressionStatement (expression (expression a) = (expression (expression a) - (expression 1))) ;)) }))) (statement (returnStatement return (expression a) ;)) }))) <EOF>)
+Expression: `1` evaluates to 1
+Expression: `2` evaluates to 2
+Expression: `3` evaluates to 3
+Expression: `4` evaluates to 4
