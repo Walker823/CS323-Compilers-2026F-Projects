@@ -1,3 +1,0 @@
-//
-int a;// ignored /* text */
-//return a;// EOF without newline

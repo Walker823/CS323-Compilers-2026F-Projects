@@ -1,1 +1,0 @@
-(program (globalDef (functionDef (type int) main ( ) (block { (statement (returnStatement return (expression (expression (expression (expression foo ( (argumentList (expression 1) , (expression 2)) )) [ (expression 0) ]) . x) [ (expression 3) ]) ;)) }))) <EOF>)

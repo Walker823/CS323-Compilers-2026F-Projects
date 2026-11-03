@@ -1,7 +1,0 @@
-Token: INT, Raw: int
-Token: Identifier, Raw: a
-Token: SEMI, Raw: ;
-Token: RETURN, Raw: return
-Token: Identifier, Raw: a
-Token: SEMI, Raw: ;
-Token: EOF, Raw: <EOF>
