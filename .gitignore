@@ -1,7 +1,7 @@
 ### CS323 Template ###
 #### Ignore generated ####
 src/main/java/generated
-
+*.class
 *.tar
 *.tar.gz
 .myapi.key
