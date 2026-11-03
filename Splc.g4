@@ -88,15 +88,10 @@ functionDef
       block
     ;
 
-/*
- * TODO (Error Production):
- *
- * Project 2 contains one grammar-specific recovery case in parameterList
- * that cannot be diagnosed as the required Missing COMMA reliably by the
- * generic recovery strategy alone.  Extend this rule according to the spec.
- */
+// Recover a missing comma before consuming the next parameter.
 parameterList
-    : parameter (COMMA parameter)*
+    : parameter (COMMA parameter
+                | {reportMissing(COMMA, currentLine());} parameter)*
     ;
 
 parameter
@@ -141,14 +136,23 @@ expressionStatement
 
 /* ==================== Expression ==================== */
 
-/*
- * TODO:
- * Complete the expression rule according to the Project 2 specification.
- *
- * The temporary Number-only rule keeps the starter grammar compilable.
- */
+// Recursive alternatives run from highest to lowest precedence.
 expression
     : Number
+    | Identifier
+    | LPAREN expression RPAREN
+    | Identifier LPAREN argumentList? RPAREN
+    | expression LBRACK expression RBRACK
+    | expression DOT Identifier
+    | <assoc=right> expression POW expression
+    | (PLUS | MINUS | NOT) expression
+    | expression (STAR | DIV | MOD) expression
+    | expression (PLUS | MINUS) expression
+    | expression (LT | LE | GT | GE) expression
+    | expression (EQ | NEQ) expression
+    | expression AND expression
+    | expression OR expression
+    | <assoc=right> expression ASSIGN expression
     ;
 
 argumentList

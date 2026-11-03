@@ -18,16 +18,48 @@ public class ConstExprVisitor extends SplcBaseVisitor<Integer> {
         results.add(new ConstExprResult(expression, value));
     }
 
-    /*
-     * TODO:
-     *
-     * 1. Find the complete expression on the right-hand side of each local
-     *    variable definition.
-     * 2. Determine whether that complete expression is a constexpr according
-     *    to the Project 2 specification.
-     * 3. Evaluate it if it is a constexpr.
-     * 4. Store the result with addResult(...).
-     *
-     * Do not add constexpr subexpressions of a non-constexpr whole expression.
-     */
+    @Override
+    public Integer visitLocalVarDef(SplcParser.LocalVarDefContext ctx) {
+        if (ctx.expression() != null) {
+            Integer value = visit(ctx.expression());
+            if (value != null) {
+                addResult(ctx.expression().getText(), value);
+            }
+        }
+        return null;
+    }
+
+    /** Returns null for every expression outside the project's constexpr subset. */
+    @Override
+    public Integer visitExpression(SplcParser.ExpressionContext ctx) {
+        if (ctx.getChildCount() == 1 && ctx.Number() != null) {
+            return Integer.parseInt(ctx.Number().getText());
+        }
+        if (ctx.getChildCount() == 3 && ctx.LPAREN() != null
+                && ctx.getStart().getType() == SplcParser.LPAREN) {
+            return visit(ctx.expression(0));
+        }
+        if (ctx.getChildCount() == 2 && (ctx.PLUS() != null || ctx.MINUS() != null)) {
+            Integer value = visit(ctx.expression(0));
+            return value == null ? null : (ctx.MINUS() != null ? -value : value);
+        }
+        if (ctx.expression().size() != 2 || ctx.getChildCount() != 3) {
+            return null;
+        }
+        // Check the operator before evaluating operands of unsupported expressions.
+        if (ctx.PLUS() == null && ctx.MINUS() == null && ctx.STAR() == null
+                && ctx.DIV() == null && ctx.MOD() == null) {
+            return null;
+        }
+        Integer left = visit(ctx.expression(0));
+        Integer right = visit(ctx.expression(1));
+        if (left == null || right == null) {
+            return null;
+        }
+        if (ctx.PLUS() != null) return left + right;
+        if (ctx.MINUS() != null) return left - right;
+        if (ctx.STAR() != null) return left * right;
+        if (ctx.DIV() != null) return left / right;
+        return left % right;
+    }
 }
