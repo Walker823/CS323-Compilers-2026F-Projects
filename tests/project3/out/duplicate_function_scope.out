@@ -1,0 +1,3 @@
+Error REDEFINED_SYMBOL at Line 1: f
+Error UNDECLARED_IDENTIFIER at Line 1: missing
+Error UNDECLARED_IDENTIFIER at Line 2: replacement

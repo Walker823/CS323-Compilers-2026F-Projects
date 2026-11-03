@@ -1,0 +1,1 @@
+(program (globalDef (functionDef (type int) main ( ) (block { (statement (returnStatement return (expression (expression (expression a) == (expression b)) != (expression c)) ;)) }))) <EOF>)

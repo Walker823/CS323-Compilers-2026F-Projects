@@ -1,0 +1,11 @@
+struct Point { int x; int grid[2][3]; };
+struct Other { struct Point points[0][2]; int x; };
+int Point;
+int values[2][3];
+struct Point copy(struct Point p[2][3], int n[0]) {
+    struct Other local[3][0];
+    int self = self;
+    local.missing = p[n[0]].x;
+    Point(n);
+    return p;
+}

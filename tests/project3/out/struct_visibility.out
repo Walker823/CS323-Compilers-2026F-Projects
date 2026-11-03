@@ -1,0 +1,6 @@
+Error UNDEFINED_STRUCT at Line 0: Node
+Error UNDEFINED_STRUCT at Line 1: Later
+Error DUPLICATE_MEMBER at Line 3: x
+Error UNDEFINED_STRUCT at Line 4: Node
+Error UNDEFINED_STRUCT at Line 5: Forward
+Error UNDEFINED_STRUCT at Line 6: Bad

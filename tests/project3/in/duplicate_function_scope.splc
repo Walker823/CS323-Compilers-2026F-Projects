@@ -1,0 +1,3 @@
+int f(int original) { return original; }
+int f(int replacement) { return replacement + missing; }
+int g() { return replacement; }

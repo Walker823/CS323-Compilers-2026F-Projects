@@ -11,12 +11,10 @@ public final class GlobalScope extends Scope {
     public Collection<StructType> getStructTypes() {
         return Collections.unmodifiableCollection(structTypes.values());
     }
-    // TODO: register only completely defined structs; same name => false.
     public boolean defineStruct(StructType type) {
-        throw new UnsupportedOperationException("TODO: GlobalScope.defineStruct");
+        return structTypes.putIfAbsent(type.getName(), type) == null;
     }
-    // TODO: global type table ONLY (not Scope.resolve).
     public StructType resolveStruct(String name) {
-        throw new UnsupportedOperationException("TODO: GlobalScope.resolveStruct");
+        return structTypes.get(name);
     }
 }

@@ -1,0 +1,8 @@
+struct Node { struct Node next; };
+struct Forward { struct Later item; };
+struct Later { int x; };
+struct Bad { int x; int x; };
+struct Node n;
+struct Forward f;
+struct Bad b;
+struct Later ok;

@@ -1,0 +1,21 @@
+int main() {
+int uninitialized;
+int zero = 0;
+int signed = -7/3;
+int remainder = -7%3;
+int nested = +((10-4)/2);
+int comment = 1 /* skip */ + 2;
+int variable = (1+2)*x;
+int not = !0;
+int power = 2^3;
+int relation = 1<2;
+int equality = 1==1;
+int and = 1&&2;
+int or = 0||1;
+int assign = x=3;
+int call = foo(1+2);
+int array = a[1+2];
+int member = a.x;
+x = 1+2;
+return 1+2;
+}

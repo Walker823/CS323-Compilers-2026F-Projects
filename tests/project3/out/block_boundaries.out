@@ -1,0 +1,4 @@
+Error UNDECLARED_IDENTIFIER at Line 2: block
+Error UNDECLARED_IDENTIFIER at Line 3: branch
+Error UNDECLARED_IDENTIFIER at Line 5: loop
+Error UNDECLARED_IDENTIFIER at Line 8: p

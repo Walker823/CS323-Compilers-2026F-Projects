@@ -1,0 +1,9 @@
+struct Missing global;
+int f(struct Missing bad, int good) {
+    struct Missing local = init;
+    bad;
+    local;
+    return good + body;
+}
+struct Missing broken(int p) { return p + inside; }
+int next() { return broken() + p; }

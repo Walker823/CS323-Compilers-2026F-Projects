@@ -12,16 +12,17 @@ public class Scope {
     public Collection<Symbol> getLocalSymbols() {
         return Collections.unmodifiableCollection(symbols.values());
     }
-    // TODO: check ONLY current scope for a duplicate; permit shadowing.
     public boolean define(Symbol symbol) {
-        throw new UnsupportedOperationException("TODO: Scope.define");
+        return symbols.putIfAbsent(symbol.getName(), symbol) == null;
     }
-    // TODO: current scope only.
     public Symbol resolveLocal(String name) {
-        throw new UnsupportedOperationException("TODO: Scope.resolveLocal");
+        return symbols.get(name);
     }
-    // TODO: current scope, then recursively parent; return null if missing.
     public Symbol resolve(String name) {
-        throw new UnsupportedOperationException("TODO: Scope.resolve");
+        for (Scope scope = this; scope != null; scope = scope.getParent()) {
+            Symbol symbol = scope.resolveLocal(name);
+            if (symbol != null) return symbol;
+        }
+        return null;
     }
 }

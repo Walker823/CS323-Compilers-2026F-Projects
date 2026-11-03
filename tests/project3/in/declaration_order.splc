@@ -1,0 +1,9 @@
+int f() {
+    later();
+    future;
+    local;
+    int local = local;
+    return f();
+}
+int future;
+int later() { return f(); }

@@ -1,0 +1,5 @@
+int before;
+struct Z { int z; int a; };
+int f(int z, int a) { return z; }
+struct A { struct Z z; };
+int after;

@@ -1,0 +1,6 @@
+int callable;
+int f() {
+    int p;
+    callable(p.missing, p.other.deep);
+    return p.missing;
+}

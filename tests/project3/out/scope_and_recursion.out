@@ -1,0 +1,4 @@
+OK
+Variable global: int
+Function f(int x): int
+Function g(int x): int

@@ -18,9 +18,9 @@ public final class FunctionSymbol extends Scope implements Symbol {
     public List<VariableSymbol> getParameters() {
         return Collections.unmodifiableList(parameters);
     }
-    // TODO: insert a parameter into THIS function scope, then append it to
-    // the ordered parameter list. Duplicate parameter => false.
     public boolean addParameter(VariableSymbol parameter) {
-        throw new UnsupportedOperationException("TODO: FunctionSymbol.addParameter");
+        if (!define(parameter)) return false;
+        parameters.add(parameter);
+        return true;
     }
 }

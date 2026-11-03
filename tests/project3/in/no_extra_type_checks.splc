@@ -1,0 +1,9 @@
+struct A { int x; };
+int f(int uninitialized) {
+    struct A a;
+    int x;
+    x = a;
+    x(1, a, uninitialized);
+    a.missing[0] = 1;
+    return a;
+}

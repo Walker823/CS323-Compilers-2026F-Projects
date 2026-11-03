@@ -1,0 +1,11 @@
+Error UNDEFINED_STRUCT at Line 0: Missing
+Error UNDEFINED_STRUCT at Line 1: Missing
+Error UNDEFINED_STRUCT at Line 2: Missing
+Error UNDECLARED_IDENTIFIER at Line 2: init
+Error UNDECLARED_IDENTIFIER at Line 3: bad
+Error UNDECLARED_IDENTIFIER at Line 4: local
+Error UNDECLARED_IDENTIFIER at Line 5: body
+Error UNDEFINED_STRUCT at Line 7: Missing
+Error UNDECLARED_IDENTIFIER at Line 7: inside
+Error UNDECLARED_IDENTIFIER at Line 8: broken
+Error UNDECLARED_IDENTIFIER at Line 8: p

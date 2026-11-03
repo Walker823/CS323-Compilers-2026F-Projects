@@ -1,0 +1,3 @@
+int main() { while (a<2 
+
+{ return 1; } }

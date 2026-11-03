@@ -1,0 +1,9 @@
+int f(int p) {
+    { int block; }
+    block;
+    if (p) { int branch; } else { branch; }
+    while (p) { int loop; }
+    loop;
+    return p;
+}
+int g() { return p; }

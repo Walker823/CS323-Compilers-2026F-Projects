@@ -1,0 +1,10 @@
+OK
+Struct Point
+  Field x: int
+  Field grid: int[2][3]
+Struct Other
+  Field points: struct Point[0][2]
+  Field x: int
+Variable Point: int
+Variable values: int[2][3]
+Function copy(struct Point[2][3] p, int[0] n): struct Point

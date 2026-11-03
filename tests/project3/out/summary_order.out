@@ -1,0 +1,9 @@
+OK
+Struct Z
+  Field z: int
+  Field a: int
+Struct A
+  Field z: struct Z
+Variable before: int
+Function f(int z, int a): int
+Variable after: int

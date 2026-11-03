@@ -1,0 +1,16 @@
+int f() {
+    int a = init;
+    lhs = rhs;
+    if (cond) { thenName; } else { elseName; }
+    while (loop) { body; }
+    arr[index] = base.field;
+    callee(arg1, arg2 + arg3);
+    +positive; -negative; !negated;
+    (paren); powLeft ^ powRight;
+    mul * div / mod % remainder;
+    add + sub - tail;
+    lt < le <= gt > ge >= final;
+    eq == ne != other;
+    andLeft && andRight || orRight;
+    return result;
+}

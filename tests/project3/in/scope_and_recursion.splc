@@ -1,0 +1,9 @@
+int global;
+int f(int x) {
+    int self = self;
+    { int x; x = f(x); }
+    if (x) { int y; y = x; } else { int y; y = x; }
+    while (x) { int y; { int x; y = x; } }
+    return f(x) + global + self;
+}
+int g(int x) { return f(x); }

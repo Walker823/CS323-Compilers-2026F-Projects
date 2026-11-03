@@ -1,0 +1,1 @@
+(program (globalDef (functionDef (type int) main ( ) (block { (statement (returnStatement return (expression foo ( )) ;)) }))) <EOF>)

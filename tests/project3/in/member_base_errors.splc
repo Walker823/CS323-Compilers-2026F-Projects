@@ -1,0 +1,5 @@
+int f() {
+    absent.field.more;
+    call(arg.field);
+    return unknown[index].field;
+}
